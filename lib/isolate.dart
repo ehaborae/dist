@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             height: 100,
           ),
           MaterialButton(
-            color: Colors.red,
+            color: Colors.amber,
             onPressed: () {
               setState(() {
                 final result = calculation(42);
@@ -95,16 +95,29 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             height: 20.0,
           ),
           MaterialButton(
-            color: Colors.black54,
-            onPressed: () async {
-              final result = await compute(calculation, 42);
+            color: Colors.red,
+            onPressed: ()  {
               setState(() {
-
+                rotationController.reset();
 
               });
             },
             child: const Text(
               "Stop Sliding",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+
+          MaterialButton(
+            color: Colors.green,
+            onPressed: ()  {
+              setState(() {
+                rotationController.forward();
+
+              });
+            },
+            child: const Text(
+              "Start Sliding",
               style: TextStyle(color: Colors.white),
             ),
           ),
